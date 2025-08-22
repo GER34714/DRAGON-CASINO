@@ -83,21 +83,24 @@
   }
 
   .instagram-section {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin:15px 0 30px;
-    font-weight: bold;
-    font-size: 1.2rem;
+    margin: 15px 0 30px;
     color: white;
-    text-decoration: none; /* quitar subrayado */
+    text-decoration: none; /* logo sin subrayado */
   }
   .instagram-section i {
     font-size:2.5rem;
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2a7b, #8134af, #515bd4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .instagram-section span {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: underline; /* texto con subrayado */
   }
 
   footer {
@@ -115,7 +118,7 @@
     .description {font-size:0.9rem;}
     .btn-whatsapp {font-size:1rem; padding:10px 20px;}
     .btn-whatsapp i {font-size:1.3rem;}
-    .instagram-section {font-size:1rem;}
+    .instagram-section span {font-size:1rem;}
     .instagram-section i {font-size:2rem;}
   }
 </style>
@@ -128,11 +131,12 @@
   <p class="description">La plataforma líder de juegos en Argentina. Tragamonedas, ruleta, póker y mucho más, con máxima diversión y premios diarios. 🏆🎲💰</p>
 </header>
 
+<!-- Botón WhatsApp -->
 <a id="whatsappButton" class="btn-whatsapp" href="https://wa.me/5491136172027?text=Hola%2C%20me%20creas%20un%20usuario%3F" target="_blank">
   <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
 </a>
 
-<!-- Instagram logo + texto debajo, sin subrayado -->
+<!-- Instagram logo arriba + texto debajo con subrayado -->
 <a class="instagram-section" href="https://www.instagram.com/dragones813?igsh=MWhrdDhmb28xM3h1aw%3D%3D&utm_source=qr" target="_blank">
   <i class="fab fa-instagram"></i>
   <span>Síguenos en nuestro Instagram oficial</span>
