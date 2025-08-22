@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    /* Fondo degradé azul y dorado */
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
@@ -42,6 +41,15 @@
       text-shadow: 2px 2px 15px #000;
     }
 
+    .description {
+      font-size: 1.3rem;
+      margin: 20px auto;
+      max-width: 700px;
+      line-height: 1.5;
+      color: #fffacd;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+    }
+
     .social {
       margin: 50px 0;
       display: flex;
@@ -53,12 +61,13 @@
       text-decoration: none;
       color: white;
       font-size: 2.5rem;
-      transition: transform 0.3s, color 0.3s;
+      transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
     }
 
     .social a:hover {
       transform: scale(1.3);
       color: #ffd700;
+      text-shadow: 0 0 10px #ffd700;
     }
 
     .btn-whatsapp {
@@ -71,19 +80,31 @@
       border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.5), 0 0 15px rgba(255,255,255,0.3) inset;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .btn-whatsapp:hover {
       transform: scale(1.15);
+      box-shadow: 0 6px 35px rgba(0,0,0,0.6), 0 0 25px rgba(255,255,255,0.5) inset, 0 0 20px #fffacd;
     }
 
     footer {
       margin-top: 60px;
       padding: 25px;
-      font-size: 1rem;
+      font-size: 0.9rem;
       background: rgba(0,0,0,0.3);
+      color: #f0f0f0;
+      line-height: 1.4;
+    }
+
+    .legal {
+      font-size: 0.75rem;
+      color: #e0e0e0;
+      margin-top: 10px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -92,20 +113,35 @@
   <header>
     <img class="logo" src="https://iili.io/K9iCoAu.jpg" alt="Dragon Casino Logo">
     <h1>🔥 Bienvenido a DRAGON CASINO 🔥</h1>
+    <p class="description">Bienvenido a DRAGON CASINO, la plataforma líder de juegos en toda Argentina. Disfrutá de tragamonedas, ruleta, póker y mucho más, con la máxima seguridad y diversión sin límites. ¡Gana premios increíbles cada día!</p>
   </header>
 
   <div class="social">
-    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="TU_LINK_DE_INSTAGRAM_AQUI" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 
-  <a class="btn-whatsapp" href="https://wa.me/5491133603448" target="_blank">
+  <a id="whatsappButton" class="btn-whatsapp" href="https://wa.me/5491136172017" target="_blank">
     📲 Contáctanos por WhatsApp
   </a>
 
   <footer>
     <p>© 2025 DRAGON CASINO - Todos los derechos reservados</p>
+    <p class="legal">Juego responsable. Debes ser mayor de 18 años para participar. Los juegos de azar pueden generar adicción.</p>
   </footer>
+
+  <script>
+    // Rotador de números de WhatsApp
+    const numbers = ['5491136172017','5491155027633'];
+    let current = 0;
+    const btn = document.getElementById('whatsappButton');
+
+    btn.addEventListener('click', function(e){
+      // Cambiar número al siguiente en el array
+      current = (current + 1) % numbers.length;
+      // Actualizar href del botón
+      btn.href = 'https://wa.me/' + numbers[current];
+    });
+  </script>
 
 </body>
 </html>
