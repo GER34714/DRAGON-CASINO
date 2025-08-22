@@ -15,16 +15,18 @@
   }
 
   header {padding: 40px 20px;}
+  
+  /* Logo pulsante con luz */
   .logo {
     width: 180px;
     max-width: 50%;
     border-radius: 50%;
     animation: pulse 2.5s infinite;
-    box-shadow: 0 0 30px rgba(255,215,0,0.8);
+    box-shadow: 0 0 20px rgba(255,215,0,0.8);
   }
   @keyframes pulse {
-    0%,100% {transform: scale(1); box-shadow:0 0 30px rgba(255,215,0,0.8);}
-    50% {transform: scale(1.05); box-shadow:0 0 60px rgba(255,215,0,1);}
+    0%,100% {transform: scale(1); box-shadow:0 0 20px rgba(255,215,0,0.8);}
+    50% {transform: scale(1.05); box-shadow:0 0 50px rgba(255,215,0,1);}
   }
 
   h1 {font-size:2rem; margin:15px 0; color:#ffd700; text-shadow:1px 1px 8px #000;}
@@ -38,24 +40,46 @@
     text-shadow:1px 1px 6px rgba(0,0,0,0.5);
   }
 
-  .social {margin:30px 0; display:flex; justify-content:center; gap:20px;}
-  .social a {color:white; font-size:2rem; transition:0.3s;}
-  .social a:hover {transform:scale(1.2); color:#ffd700; text-shadow:0 0 10px #ffd700;}
-
-  .btn-whatsapp {
-    display:inline-block;
-    margin:20px 0;
-    padding:14px 25px;
+  /* Botones */
+  .btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:15px 0;
+    padding:12px 25px;
     font-size:1.2rem;
     color:white;
-    background: linear-gradient(45deg,#25d366,#128c7e);
     border-radius:50px;
     font-weight:bold;
     text-decoration:none;
     box-shadow:0 5px 20px rgba(0,0,0,0.5), 0 0 10px rgba(255,255,255,0.3) inset;
     transition:0.3s;
+    position: relative;
   }
-  .btn-whatsapp:hover {transform:scale(1.1); box-shadow:0 5px 25px rgba(0,0,0,0.6), 0 0 15px rgba(255,255,255,0.5) inset, 0 0 15px #fffacd;}
+
+  /* Botón Instagram */
+  .btn-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  }
+  .btn-instagram:hover {transform:scale(1.05); box-shadow:0 5px 25px rgba(0,0,0,0.6), 0 0 10px rgba(255,255,255,0.3) inset;}
+
+  /* Botón WhatsApp destacado */
+  .btn-whatsapp {
+    background: linear-gradient(45deg,#25d366,#128c7e);
+  }
+  .btn-whatsapp:hover {transform:scale(1.1); box-shadow:0 5px 30px rgba(0,0,0,0.7),0 0 15px rgba(255,255,255,0.5) inset, 0 0 25px #25d366;}
+
+  /* Icono de WhatsApp más grande y con animación */
+  .btn-whatsapp i {
+    font-size:1.5rem;
+    animation: glow 2s infinite alternate;
+  }
+  @keyframes glow {
+    0% {text-shadow: 0 0 5px #25d366, 0 0 10px #25d366;}
+    50% {text-shadow: 0 0 10px #25d366, 0 0 20px #25d366;}
+    100% {text-shadow: 0 0 5px #25d366, 0 0 10px #25d366;}
+  }
 
   footer {
     margin-top:40px;
@@ -70,8 +94,8 @@
   @media(max-width:480px){
     h1 {font-size:1.5rem;}
     .description {font-size:0.9rem;}
-    .social a {font-size:1.8rem;}
-    .btn-whatsapp {font-size:1rem; padding:12px 20px;}
+    .btn {font-size:1rem; padding:10px 20px;}
+    .btn-whatsapp i {font-size:1.3rem;}
   }
 </style>
 </head>
@@ -83,12 +107,16 @@
   <p class="description">La plataforma líder de juegos en Argentina. Tragamonedas, ruleta, póker y mucho más, con máxima diversión y premios diarios.</p>
 </header>
 
-<div class="social">
-  <a href="https://www.instagram.com/dragones813?igsh=MWhrdDhmb28xM3h1aw%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
-</div>
+<!-- Botón Instagram -->
+<a class="btn btn-instagram" href="https://www.instagram.com/dragones813?igsh=MWhrdDhmb28xM3h1aw%3D%3D&utm_source=qr" target="_blank">
+  <i class="fab fa-instagram"></i> Síguenos en nuestro Instagram oficial
+</a>
 
-<a id="whatsappButton" class="btn-whatsapp" href="https://wa.me/5491136172027?text=Hola%2C%20me%20creas%20un%20usuario%3F" target="_blank">
-  📲 Contáctanos por WhatsApp
+<br>
+
+<!-- Botón WhatsApp -->
+<a id="whatsappButton" class="btn btn-whatsapp" href="https://wa.me/5491136172027?text=Hola%2C%20me%20creas%20un%20usuario%3F" target="_blank">
+  <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
 </a>
 
 <footer>
@@ -101,7 +129,7 @@ const numbers = ['5491136172027','5491155027633'];
 let current = 0;
 const btn = document.getElementById('whatsappButton');
 
-btn.addEventListener('click', function(e){
+btn.addEventListener('click', function(){
   current = (current + 1) % numbers.length;
   btn.href = 'https://wa.me/' + numbers[current] + '?text=Hola%2C%20me%20creas%20un%20usuario%3F';
 });
