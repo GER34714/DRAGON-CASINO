@@ -9,30 +9,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
-    /* Fondo tipo casino */
+    /* Fondo degradé azul y dorado */
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: url('https://iili.io/K9sU7X2.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(135deg, #0a1a3f, #0f4c75, #ffd700);
       color: white;
       text-align: center;
-      position: relative;
-    }
-
-    /* Capa oscura encima del fondo para contraste */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
     }
 
     header {
-      position: relative;
-      z-index: 1;
       padding: 50px 20px;
     }
 
@@ -61,8 +47,6 @@
       display: flex;
       justify-content: center;
       gap: 25px;
-      position: relative;
-      z-index: 1;
     }
 
     .social a {
@@ -89,8 +73,6 @@
       font-weight: bold;
       box-shadow: 0 6px 25px rgba(0,0,0,0.5);
       transition: transform 0.3s;
-      position: relative;
-      z-index: 1;
     }
 
     .btn-whatsapp:hover {
@@ -98,12 +80,10 @@
     }
 
     footer {
-      position: relative;
-      z-index: 1;
       margin-top: 60px;
       padding: 25px;
       font-size: 1rem;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.3);
     }
   </style>
 </head>
