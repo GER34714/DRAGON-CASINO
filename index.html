@@ -15,8 +15,6 @@
   }
 
   header {padding: 40px 20px;}
-  
-  /* Logo pulsante con luz */
   .logo {
     width: 180px;
     max-width: 50%;
@@ -58,28 +56,38 @@
     position: relative;
   }
 
-  /* Botón Instagram */
-  .btn-instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  }
-  .btn-instagram:hover {transform:scale(1.05); box-shadow:0 5px 25px rgba(0,0,0,0.6), 0 0 10px rgba(255,255,255,0.3) inset;}
-
-  /* Botón WhatsApp destacado */
+  /* Botón WhatsApp con luz neón suave pulsante */
   .btn-whatsapp {
     background: linear-gradient(45deg,#25d366,#128c7e);
+    text-shadow: 0 0 5px #25d366, 0 0 10px #25d366;
+    box-shadow: 0 0 10px #25d366, 0 0 20px #25d366 inset;
+    animation: neon 1.8s infinite alternate;
   }
-  .btn-whatsapp:hover {transform:scale(1.1); box-shadow:0 5px 30px rgba(0,0,0,0.7),0 0 15px rgba(255,255,255,0.5) inset, 0 0 25px #25d366;}
+  .btn-whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #25d366, 0 0 40px #25d366 inset;
+  }
+  .btn-whatsapp i {margin-right:8px; font-size:1.5rem;}
 
-  /* Icono de WhatsApp más grande y con animación */
-  .btn-whatsapp i {
-    font-size:1.5rem;
-    animation: glow 2s infinite alternate;
+  @keyframes neon {
+    0% {box-shadow: 0 0 8px #25d366, 0 0 15px #25d366 inset; text-shadow:0 0 5px #25d366,0 0 10px #25d366;}
+    50% {box-shadow: 0 0 12px #25d366, 0 0 20px #25d366 inset; text-shadow:0 0 8px #25d366,0 0 15px #25d366;}
+    100% {box-shadow: 0 0 8px #25d366, 0 0 15px #25d366 inset; text-shadow:0 0 5px #25d366,0 0 10px #25d366;}
   }
-  @keyframes glow {
-    0% {text-shadow: 0 0 5px #25d366, 0 0 10px #25d366;}
-    50% {text-shadow: 0 0 10px #25d366, 0 0 20px #25d366;}
-    100% {text-shadow: 0 0 5px #25d366, 0 0 10px #25d366;}
+
+  /* Botón Instagram solo logo + texto */
+  .btn-instagram {
+    background: transparent;
+    color: white;
+    font-size:2rem;
+    flex-direction: row;
   }
+  .instagram-text {
+    margin-left:10px;
+    font-size:1rem;
+    font-weight:bold;
+  }
+  .btn-instagram:hover {color:#f09433; text-shadow:0 0 5px #f09433;}
 
   footer {
     margin-top:40px;
@@ -96,6 +104,7 @@
     .description {font-size:0.9rem;}
     .btn {font-size:1rem; padding:10px 20px;}
     .btn-whatsapp i {font-size:1.3rem;}
+    .instagram-text {font-size:0.9rem;}
   }
 </style>
 </head>
@@ -107,16 +116,17 @@
   <p class="description">La plataforma líder de juegos en Argentina. Tragamonedas, ruleta, póker y mucho más, con máxima diversión y premios diarios.</p>
 </header>
 
-<!-- Botón Instagram -->
-<a class="btn btn-instagram" href="https://www.instagram.com/dragones813?igsh=MWhrdDhmb28xM3h1aw%3D%3D&utm_source=qr" target="_blank">
-  <i class="fab fa-instagram"></i> Síguenos en nuestro Instagram oficial
+<!-- Botón WhatsApp arriba -->
+<a id="whatsappButton" class="btn btn-whatsapp" href="https://wa.me/5491136172027?text=Hola%2C%20me%20creas%20un%20usuario%3F" target="_blank">
+  <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
 </a>
 
 <br>
 
-<!-- Botón WhatsApp -->
-<a id="whatsappButton" class="btn btn-whatsapp" href="https://wa.me/5491136172027?text=Hola%2C%20me%20creas%20un%20usuario%3F" target="_blank">
-  <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
+<!-- Botón Instagram debajo -->
+<a class="btn btn-instagram" href="https://www.instagram.com/dragones813?igsh=MWhrdDhmb28xM3h1aw%3D%3D&utm_source=qr" target="_blank">
+  <i class="fab fa-instagram"></i>
+  <span class="instagram-text">Síguenos en nuestro Instagram oficial</span>
 </a>
 
 <footer>
