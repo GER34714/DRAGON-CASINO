@@ -117,10 +117,12 @@
   </header>
 
   <div class="social">
-    <a href="TU_LINK_DE_INSTAGRAM_AQUI" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.instagram.com/dragones813?igsh=MWhrdDhmb28xM3h1aw%3D%3D&utm_source=qr" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
   </div>
 
-  <a id="whatsappButton" class="btn-whatsapp" href="https://wa.me/5491136172017" target="_blank">
+  <a id="whatsappButton" class="btn-whatsapp" href="https://wa.me/5491136172027" target="_blank">
     📲 Contáctanos por WhatsApp
   </a>
 
@@ -131,14 +133,12 @@
 
   <script>
     // Rotador de números de WhatsApp
-    const numbers = ['5491136172017','5491155027633'];
+    const numbers = ['5491136172027','5491155027633'];
     let current = 0;
     const btn = document.getElementById('whatsappButton');
 
     btn.addEventListener('click', function(e){
-      // Cambiar número al siguiente en el array
       current = (current + 1) % numbers.length;
-      // Actualizar href del botón
       btn.href = 'https://wa.me/' + numbers[current];
     });
   </script>
